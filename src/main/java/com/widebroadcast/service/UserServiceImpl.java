@@ -89,7 +89,7 @@ public class UserServiceImpl implements UserService {
 			throws SlotNotAvailableException {
 		log.info("UserServiceImpl bookSlots ---> booking slot");
 		HashSet<TimeSlot> timeSlots = new HashSet<>();
-		int expectedCount[]  = {0};
+		int[] expectedCount  = {0};
 		bookSlotRequestDto.getTimeSlots().forEach(timeSlot -> {
 			List<TimeSlot> tempTimeSlots = new ArrayList<>();
 			tempTimeSlots.addAll(timeSlotRepository.findByStatusAndSlotDateTimeBetween(TimeSlotStatus.AVAILABLE,
